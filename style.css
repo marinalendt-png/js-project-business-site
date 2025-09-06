@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 70px;
 }
 
 header {
@@ -26,8 +26,6 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 60;
-  /* border: 2px solid black; */
   margin-top: 50px;
 }
 
@@ -46,118 +44,148 @@ a:hover {
   color: rgb(241, 163, 107);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- Grid container --- */
 .grid-container {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  /* border: 1px solid red; */
-}
-
-.box-wrapper {
-  width: 60%;
   display: grid;
-  padding: 30px;
-  margin-top: 50px;
   justify-content: center;
-  gap: 40px;
-  /* border: 1px solid blue; */
+  width: 100%;
+  padding-inline: 12px;
+  /* så det inte trycker mot kanten på mobil */
 }
 
-.grid-box-1 {
-  background-image: url(box1.jpg);
-  background-size: cover;
-  aspect-ratio: 1/1;
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  border-radius: 20px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
+/* --- Box wrapper --- */
+.box-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* desktop: 3 kolumner */
+  gap: 24px;
+  width: min(1200px, 100%);
+  /* krymper med skärmen, max 1200px */
+  margin: 50px auto 0;
+  padding: 24px;
 }
 
-.grid-box-2 {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
-  border-radius: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  padding: 12px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
-}
 
-.grid-box-3 {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-  border-radius: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  padding: 12px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
-}
 
-.grid-box-4 {
-  background-image: url(box4.jpg);
-  background-size: cover;
-  aspect-ratio: 1/1;
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-  border-radius: 20px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
-
-}
-
-.grid-box-5 {
-  background-image: url(box5.jpg);
-  background-size: cover;
-  aspect-ratio: 1/1;
-  grid-row: 1 / 2;
-  grid-column: 3 / 4;
-  border-radius: 20px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
-}
-
+/* --- Gemensam box-styling --- */
+.grid-box-1,
+.grid-box-2,
+.grid-box-3,
+.grid-box-4,
+.grid-box-5,
 .grid-box-6 {
-  grid-row: 2 / 3;
-  grid-column: 3 / 4;
-  border-radius: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
-  padding: 12px;
-  margin: 20px;
-  box-shadow: 5px 5px 10px 10px grey;
+  margin: 0;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background-color: #fff;
 }
 
+/* Bildboxar */
+.grid-box-1 img,
+.grid-box-4 img,
+.grid-box-5 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
 
-@media (max-width: 667px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-  }
+/* Textboxar */
+.grid-box-2,
+.grid-box-3,
+.grid-box-6 {
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+}
 
+/* --- Tablet: 2 kolumner --- */
+@media (max-width: 900px) {
   h1 {
-    font-size: 20px;
+    font-size: 50px;
+    text-align: center;
   }
 
-  .grid-container {
-    grid-template-columns: row;
+  header {
+    height: 300px;
+    padding-left: 40px;
+    padding-top: 30px;
+    background-position: center 70%;
+  }
+
+  .nav-links {
+    gap: 50px;
+    font-size: 24px;
+  }
+
+  .box-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: min(900px, 95%);
+    padding: 20px;
+  }
+
+  .grid-box-1,
+  .grid-box-4,
+  .grid-box-5 {
+    aspect-ratio: 1/1;
   }
 }
 
-@media (min-width: 667px) and (max-width: 1024px) {
-  .header {
-    display: flex;
-    flex-direction: row;
+/* --- Mobil: 1 kolumn + mindre höjd på bildboxar --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+    text-align: center;
   }
 
-  h1 {
+  header {
+    height: 180px;
+    padding-left: 16px;
+    padding-top: 16px;
+    background-position: center 60%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  .box-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+  }
+
+  /* Gör bildboxarna mindre i höjd på mobilen (så de inte fyller hela skärmen) */
+  .grid-box-1,
+  .grid-box-4,
+  .grid-box-5 {
+    aspect-ratio: auto;
+    /* låter höjden anpassas efter innehåll */
+    min-height: 140px;
+    /* sätt en rimlig min-höjd för bilder */
+    background-size: cover;
+  }
+
+  /* Minska textstorlek något */
+  .grid-box-2,
+  .grid-box-3,
+  .grid-box-6 {
+    padding: 12px;
     font-size: 16px;
-  }
-
-  .grid-container {
-    grid-template-columns: row;
   }
 }
