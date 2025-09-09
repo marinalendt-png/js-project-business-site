@@ -50,30 +50,25 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* --- Grid container --- */
 .grid-container {
-  display: grid;
+  /* display: grid; */
   justify-content: center;
   width: 100%;
   padding-inline: 12px;
   /* så det inte trycker mot kanten på mobil */
 }
 
-/* --- Box wrapper --- */
 .box-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* desktop: 3 kolumner */
   gap: 24px;
   width: min(1200px, 100%);
   /* krymper med skärmen, max 1200px */
   margin: 50px auto 0;
   padding: 24px;
+  grid-auto-rows: auto;
 }
 
-
-
-/* --- Gemensam box-styling --- */
 .grid-box-1,
 .grid-box-2,
 .grid-box-3,
@@ -81,37 +76,42 @@ a:hover {
 .grid-box-5,
 .grid-box-6 {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   border-radius: 16px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   background-color: #fff;
+  aspect-ratio: 1 /1;
 }
 
 /* Bildboxar */
 .grid-box-1 img,
 .grid-box-4 img,
 .grid-box-5 img {
+  flex: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
-  background-size: cover;
-  background-position: center;
 }
 
 /* Textboxar */
 .grid-box-2,
 .grid-box-3,
 .grid-box-6 {
+  flex: 1;
   padding: 16px;
   font-size: 18px;
   line-height: 1.4;
+  min-height: 0;
 }
 
 /* --- Tablet: 2 kolumner --- */
 @media (max-width: 900px) {
   h1 {
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
   }
 
@@ -132,6 +132,7 @@ a:hover {
     gap: 20px;
     width: min(900px, 95%);
     padding: 20px;
+    grid-auto-rows: auto;
   }
 
   .grid-box-1,
@@ -139,12 +140,19 @@ a:hover {
   .grid-box-5 {
     aspect-ratio: 1/1;
   }
+
+  .grid-box-2,
+  .grid-box-3,
+  .grid-box-6 {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
 
 /* --- Mobil: 1 kolumn + mindre höjd på bildboxar --- */
 @media (max-width: 600px) {
   h1 {
-    font-size: 32px;
+    font-size: 25px;
     text-align: center;
   }
 
@@ -174,11 +182,8 @@ a:hover {
   .grid-box-1,
   .grid-box-4,
   .grid-box-5 {
-    aspect-ratio: auto;
-    /* låter höjden anpassas efter innehåll */
     min-height: 140px;
     /* sätt en rimlig min-höjd för bilder */
-    background-size: cover;
   }
 
   /* Minska textstorlek något */
@@ -186,6 +191,6 @@ a:hover {
   .grid-box-3,
   .grid-box-6 {
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
