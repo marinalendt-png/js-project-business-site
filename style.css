@@ -1,5 +1,5 @@
 body {
-  background-color: blanchedalmond;
+  background-color: rgb(196, 181, 163);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -41,10 +41,10 @@ a {
 }
 
 a:hover {
-  color: rgb(241, 163, 107);
+  color: rgb(206, 143, 98);
 }
 
-*,
+/* *, Hur funkar detta? */
 *::before,
 *::after {
   box-sizing: border-box;
@@ -55,7 +55,7 @@ a:hover {
   justify-content: center;
   width: 100%;
   padding-inline: 12px;
-  /* så det inte trycker mot kanten på mobil */
+  /* ej trycker mot kanten på mobil */
 }
 
 .box-wrapper {
@@ -69,6 +69,7 @@ a:hover {
   grid-auto-rows: auto;
 }
 
+/* Alla boxar */
 .grid-box-1,
 .grid-box-2,
 .grid-box-3,
@@ -107,6 +108,101 @@ a:hover {
   line-height: 1.4;
   min-height: 0;
 }
+
+.form-box {
+  background-color: #ddd;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 40px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+fieldset {
+  /* border: none; */
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+label {
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+span {
+  width: 30%;
+  text-align: right;
+  margin-right: 15px;
+  flex-shrink: 0;
+
+}
+
+input {
+  width: 70%;
+  font-size: 15px;
+  padding: 5px 0 px;
+}
+
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #333;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #d2691e;
+}
+
+/* Ev flytta denna så den hamnar längst ner? */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
+
 
 /* --- Tablet: 2 kolumner --- */
 @media (max-width: 900px) {
@@ -147,6 +243,10 @@ a:hover {
     padding: 12px;
     font-size: 14px;
   }
+
+  footer {
+    background-position: center 70%;
+  }
 }
 
 /* --- Mobil: 1 kolumn + mindre höjd på bildboxar --- */
@@ -183,14 +283,12 @@ a:hover {
   .grid-box-4,
   .grid-box-5 {
     min-height: 140px;
-    /* sätt en rimlig min-höjd för bilder */
   }
 
-  /* Minska textstorlek något */
   .grid-box-2,
   .grid-box-3,
   .grid-box-6 {
     padding: 12px;
-    font-size: 18px;
+    font-size: 12px;
   }
 }
