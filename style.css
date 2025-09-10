@@ -8,35 +8,32 @@ h1 {
 }
 
 header {
-  position: relative;
-  /* För att texten ska kunna placeras ovanpå */
-  background-image: url('headerbild.jpg');
+  background-image: url('herobild.jpg');
   background-size: cover;
-  background-position: center 80%;
-  /* För att få bilden på den position som önskas*/
+  background-position: left;
   height: 400px;
   display: flex;
   justify-content: start;
-  padding-left: 80px;
+  align-items: center;
+  padding-left: 60px;
   padding-top: 40px;
   color: white;
 }
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-content: start;
   width: 100%;
-  margin-top: 50px;
 }
 
 .nav-links {
-  display: flex;
   font-size: 30px;
   gap: 100px;
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -54,8 +51,6 @@ a:hover {
   /* display: grid; */
   justify-content: center;
   width: 100%;
-  padding-inline: 12px;
-  /* ej trycker mot kanten på mobil */
 }
 
 .box-wrapper {
@@ -120,10 +115,7 @@ a:hover {
 }
 
 fieldset {
-  /* border: none; */
-  padding: 10px;
-  background-color: white;
-  border-radius: 4px;
+  border: none;
 }
 
 label {
@@ -135,19 +127,23 @@ label {
 }
 
 span {
-  width: 30%;
-  text-align: right;
-  margin-right: 15px;
-  flex-shrink: 0;
-
+  margin-right: 10px;
 }
 
 input {
   width: 70%;
   font-size: 15px;
-  padding: 5px 0 px;
+  /* padding: 5px 0 px; */
 }
 
+button {
+  background: rgb(198, 165, 106);
+  font-size: 12px;
+  color: white;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 10px;
+}
 
 /* Footer */
 footer {
@@ -227,8 +223,8 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: min(900px, 95%);
-    padding: 20px;
-    grid-auto-rows: auto;
+    /* padding: 20px; */
+
   }
 
   .grid-box-1,
@@ -257,7 +253,7 @@ footer {
   }
 
   header {
-    height: 180px;
+    height: 200px;
     padding-left: 16px;
     padding-top: 16px;
     background-position: center 60%;
@@ -273,8 +269,7 @@ footer {
   .box-wrapper {
     grid-template-columns: 1fr;
     gap: 16px;
-    width: 100%;
-    padding: 16px;
+    width: 80%;
     margin-top: 30px;
   }
 
