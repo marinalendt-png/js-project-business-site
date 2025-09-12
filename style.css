@@ -5,6 +5,7 @@ body {
 
 h1 {
   font-size: 70px;
+  margin: 0
 }
 
 header {
@@ -12,22 +13,17 @@ header {
   background-size: cover;
   background-position: left;
   height: 400px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   padding-left: 60px;
   padding-top: 40px;
   color: white;
 }
 
 .navbar {
-  display: flex;
-  justify-content: start;
-  align-content: start;
   width: 100%;
 }
 
 .nav-links {
+  display: flex;
   font-size: 30px;
   gap: 100px;
 }
@@ -41,15 +37,8 @@ a:hover {
   color: rgb(206, 143, 98);
 }
 
-/* *, Hur funkar detta? */
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 .grid-container {
-  /* display: grid; */
-  justify-content: center;
   width: 100%;
 }
 
@@ -133,7 +122,6 @@ span {
 input {
   width: 70%;
   font-size: 15px;
-  /* padding: 5px 0 px; */
 }
 
 button {
@@ -145,7 +133,6 @@ button {
   margin-top: 10px;
 }
 
-/* Footer */
 footer {
   background-color: white;
   padding: 20px;
@@ -188,7 +175,7 @@ footer {
   color: #d2691e;
 }
 
-/* Ev flytta denna så den hamnar längst ner? */
+/* Hur flytta denna så den hamnar längst ner? */
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
@@ -197,8 +184,6 @@ footer {
   color: #666;
   border-top: 1px solid #ddd;
 }
-
-
 
 /* --- Tablet: 2 kolumner --- */
 @media (max-width: 900px) {
@@ -223,8 +208,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: min(900px, 95%);
-    /* padding: 20px; */
-
   }
 
   .grid-box-1,
@@ -238,10 +221,6 @@ footer {
   .grid-box-6 {
     padding: 12px;
     font-size: 14px;
-  }
-
-  footer {
-    background-position: center 70%;
   }
 }
 
@@ -285,5 +264,14 @@ footer {
   .grid-box-6 {
     padding: 12px;
     font-size: 12px;
+  }
+
+  .form-box {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  footer {
+    font-size: 10px;
   }
 }
