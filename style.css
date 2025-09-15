@@ -53,7 +53,7 @@ a:hover {
   grid-auto-rows: auto;
 }
 
-/* Alla boxar */
+/* All the boxes */
 .grid-box-1,
 .grid-box-2,
 .grid-box-3,
@@ -71,7 +71,7 @@ a:hover {
   aspect-ratio: 1 /1;
 }
 
-/* Bildboxar */
+/* Img-boxes 1-4-5 */
 .grid-box-1 img,
 .grid-box-4 img,
 .grid-box-5 img {
@@ -82,7 +82,7 @@ a:hover {
   object-fit: cover;
 }
 
-/* Textboxar */
+/* Text-boxes 2-3-6 */
 .grid-box-2,
 .grid-box-3,
 .grid-box-6 {
