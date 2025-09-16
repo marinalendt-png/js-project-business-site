@@ -50,6 +50,7 @@ header {
   font-size: 40px;
   font-weight: bold;
   color: white;
+  ;
 }
 
 .links {
@@ -152,12 +153,26 @@ header {
 
 .form-box {
   background-color: #ddd;
+  font-size: 14px;
   border: 1px solid lightgray;
   border-radius: 4px;
-  margin: 40px;
   max-width: 500px;
   margin: 40px auto;
   padding: 10px;
+}
+
+.formbox .h2 {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.formbox .h3 {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
 }
 
 fieldset {
@@ -168,7 +183,8 @@ label {
   background-color: #ddd;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
+  margin-left: 50px;
 }
 
 span {
@@ -177,16 +193,17 @@ span {
 
 input {
   width: 70%;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 button {
+  display: block;
   background: rgb(198, 165, 106);
   font-size: 12px;
   color: white;
   border-radius: 4px;
-  width: 100%;
-  margin-top: 10px;
+  width: 50%;
+  margin: 10px auto;
 }
 
 footer {
@@ -205,14 +222,19 @@ footer {
 
 .footer-section {
   flex: 1 1 250px;
+  /*börjar på 250px men växer/krymper med utrymmet */
+  display: block;
 }
 
 .footer-section h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  text-align: center;
+  ;
 }
 
 .footer-section p {
+  text-align: center;
   margin: 5px 0;
   line-height: 1.5;
 }
@@ -220,8 +242,10 @@ footer {
 .social-links a {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   text-decoration: none;
+  font-size: 16px;
   color: #333;
   margin: 5px 0;
   transition: color 0.3s;
@@ -231,10 +255,12 @@ footer {
   color: #d2691e;
 }
 
-/* Hur flytta denna så den hamnar längst ner? */
 .footer-bottom {
+  width: 100%;
+  /*tar upp hela footer-bredden */
   text-align: center;
-  margin-top: 30px;
+  /*centerar texten */
+  margin-top: 15px;
   padding-top: 15px;
   font-size: 14px;
   color: #666;
@@ -251,23 +277,6 @@ footer {
     color: white;
     display: block;
   }
-
-  /* h1 {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  header {
-    height: 300px;
-    padding-left: 40px;
-    padding-top: 30px;
-    background-position: center 70%;
-  }
-
-  .nav-links {
-    gap: 50px;
-    font-size: 24px;
-  } */
 
   .box-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -318,26 +327,6 @@ footer {
     align-items: center;
   }
 
-
-  /* h1 {
-    font-size: 25px;
-    text-align: center;
-  }
-
-  header {
-    height: 200px;
-    padding-left: 16px;
-    padding-top: 16px;
-    background-position: center 60%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    font-size: 18px;
-  } */
-
   .box-wrapper {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -356,10 +345,10 @@ footer {
   .grid-box-3,
   .grid-box-6 {
     padding: 12px;
-    font-size: 12px;
+    font-size: 10px;
   }
 
-  .form-box {
+  .form-box .h2 .h3 {
     width: 80%;
     font-size: 12px;
   }
