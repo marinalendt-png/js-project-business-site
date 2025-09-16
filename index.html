@@ -6,10 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business-project</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
   <header>
+    <div class="navbar">
+      <div class="logo">BrödRevolt</div>
+      <ul class="links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our history</a></li>
+        <li><a href="#">Find us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="toggle-btn"><i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <div class="dropdown-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our history</a></li>
+        <li><a href="#">Find us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- <header>
     <nav>
       <div class="nav-links">
         <h1>BrödRevolt</h1>
@@ -19,7 +46,7 @@
         <a href="#">Contact</a>
       </div>
     </nav>
-  </header>
+  </header> -->
 
   <!-- Grid-container img + text-->
   <section class="grid-container">
@@ -115,6 +142,22 @@
 
       </div>
   </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const toggleBtnIcon = toggleBtn.querySelector('i');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = dropdownMenu.classList.toggle('open');
+
+
+      toggleBtnIcon.className = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars';
+    });
+  </script>
+
 </body>
 
 </html>
