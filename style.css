@@ -1,15 +1,14 @@
-* {
+/* BODY-LAYOUT */
+body {
+  background-color: rgb(196, 181, 163);
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body {
-  background-color: rgb(196, 181, 163);
-  min-height: 100vh;
-}
-
+/* HEADER & NAVBAR */
 li {
   list-style: none;
   color: white;
@@ -26,7 +25,6 @@ a:hover {
   transition: 0.3s;
 }
 
-/* HEADER */
 header {
   position: relative;
   padding: 0 2rem;
@@ -50,7 +48,6 @@ header {
   font-size: 40px;
   font-weight: bold;
   color: white;
-  ;
 }
 
 .links {
@@ -64,7 +61,6 @@ header {
   cursor: pointer;
 }
 
-/* DROPDOWN-MENU */
 .dropdown-menu {
   position: absolute;
   right: 2rem;
@@ -96,6 +92,7 @@ header {
   max-height: 500px;
 }
 
+/* GRID / BOXES */
 .grid-container {
   width: 100%;
 }
@@ -111,7 +108,6 @@ header {
   grid-auto-rows: auto;
 }
 
-/* All the boxes */
 .grid-box-1,
 .grid-box-2,
 .grid-box-3,
@@ -129,7 +125,7 @@ header {
   aspect-ratio: 1 /1;
 }
 
-/* Img-boxes 1-4-5 */
+/* Img-boxes */
 .grid-box-1 img,
 .grid-box-4 img,
 .grid-box-5 img {
@@ -140,7 +136,7 @@ header {
   object-fit: cover;
 }
 
-/* Text-boxes 2-3-6 */
+/* Text-boxes */
 .grid-box-2,
 .grid-box-3,
 .grid-box-6 {
@@ -151,29 +147,39 @@ header {
   min-height: 0;
 }
 
+.grid-box-2 h2,
+.grid-box-3 h2,
+.grid-box-6 h2 {
+  margin-bottom: 0, 5rem;
+}
+
+
+/* FORM */
 .form-box {
+  align-items: center;
   background-color: #ddd;
   font-size: 14px;
   border: 1px solid lightgray;
-  border-radius: 4px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
   max-width: 500px;
   margin: 40px auto;
   padding: 10px;
 }
 
-/* Sätta ihop formboxarna? undvik upprepning?  */
-.form-box h2 {
-  font-size: 16px;
+.form-box h2,
+.form-box h3 {
   display: flex;
   justify-content: center;
   padding-left: 10px;
 }
 
+.form-box h2 {
+  font-size: 16px;
+}
+
 .form-box h3 {
   font-size: 12px;
-  display: flex;
-  justify-content: center;
-  padding-left: 10px;
 }
 
 fieldset {
@@ -241,6 +247,7 @@ button {
 
 .radiobutton-container input:checked+.custom-radio::after {
   content: "";
+  /*behövs för att cirkeln ska fyllas*/
   position: absolute;
   top: 50%;
   left: 50%;
@@ -251,6 +258,7 @@ button {
   transform: translate(-50%, -50%);
 }
 
+/* FOOTER */
 footer {
   background-color: white;
   padding: 20px;
@@ -275,7 +283,6 @@ footer {
   font-size: 18px;
   margin-bottom: 10px;
   text-align: center;
-  ;
 }
 
 .footer-section p {
@@ -302,9 +309,7 @@ footer {
 
 .footer-bottom {
   width: 100%;
-  /*tar upp hela footer-bredden */
   text-align: center;
-  /*centerar texten */
   margin-top: 15px;
   padding-top: 15px;
   font-size: 14px;
@@ -312,8 +317,9 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/* --- Tablet: 2 kolumner --- */
-@media (max-width: 900px) {
+/* MEDIA QUERIES */
+/* --- Tablet --- */
+@media (max-width: 1024px) {
   .navbar .links {
     display: none;
   }
@@ -343,7 +349,7 @@ footer {
   }
 }
 
-/* --- Mobil: 1 kolumn + mindre höjd på bildboxar --- */
+/* --- Mobile: --- */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -389,16 +395,33 @@ footer {
   .grid-box-2,
   .grid-box-3,
   .grid-box-6 {
-    padding: 12px;
-    font-size: 10px;
+    padding: 10px;
+    font-size: 12px;
   }
 
-  .form-box .h2 .h3 {
+  .form-box {
+    width: 90%;
+    max-width: none;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .form-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    margin-left: 0;
+  }
+
+  .form-box .h2 {
     width: 80%;
     font-size: 12px;
   }
 
   footer {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
