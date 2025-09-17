@@ -84,16 +84,25 @@
     <form action="http://httpbin.org/anything" method="post">
       <h2>Newsletter and recipes? </h2>
       <h3>Fill in your name and email and we will register you &#128235; </h3>
+
       <fieldset>
         <label>
           <span>Name</span>
-          <input type="text" name="email">
+          <input type="text" name="name">
         </label>
         <label>
           <span>E-mail</span>
           <input type="email" name="email">
         </label>
       </fieldset>
+
+      <div class="wrapper-row">
+        <label class="radiobutton-container">
+          <input type="radio" name="answer">
+          <span class="custom-radio"></span>
+          <span>I accept the terms and conditions.</span>
+        </label>
+      </div>
 
       <button type="submit">Send</button>
     </form>

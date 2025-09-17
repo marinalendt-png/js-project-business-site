@@ -161,14 +161,15 @@ header {
   padding: 10px;
 }
 
-.formbox .h2 {
+/* Sätta ihop formboxarna? undvik upprepning?  */
+.form-box h2 {
   font-size: 16px;
   display: flex;
   justify-content: center;
   padding-left: 10px;
 }
 
-.formbox .h3 {
+.form-box h3 {
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -204,6 +205,50 @@ button {
   border-radius: 4px;
   width: 50%;
   margin: 10px auto;
+}
+
+/* RADIOBUTTON */
+.wrapper-row {
+  display: flex;
+  justify-content: center;
+}
+
+.radiobutton-container {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.radiobutton-container input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  /* Gör att klick går på labeln */
+}
+
+.custom-radio {
+  flex-shrink: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+}
+
+.radiobutton-container input:checked+.custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #dc9b52;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 footer {
