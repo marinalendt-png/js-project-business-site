@@ -56,6 +56,7 @@ header {
 }
 
 .toggle-btn {
+  position: relative;
   display: none;
   font-size: 2rem;
   cursor: pointer;
@@ -66,7 +67,7 @@ header {
   right: 2rem;
   top: 60px;
   max-height: 0;
-  width: 300px;
+  width: 200px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   border-radius: 10px;
@@ -84,12 +85,12 @@ header {
 .dropdown-menu li {
   padding: 0.7rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .dropdown-menu.open {
-  max-height: 500px;
+  max-height: 400px;
 }
 
 /* GRID / BOXES */
@@ -141,7 +142,7 @@ header {
 .grid-box-3,
 .grid-box-6 {
   flex: 1;
-  padding: 16px;
+  padding: 20px;
   font-size: 18px;
   line-height: 1.4;
   min-height: 0;
@@ -358,24 +359,16 @@ footer {
     gap: 1rem;
   }
 
-  .toggle-btn {
-    display: block;
-    margin-top: 1rem;
-  }
-
-  .links {
-    display: none;
-  }
-
   .dropdown-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 60px;
+    margin-top: 60px;
     left: 50%;
     transform: translate(-50%);
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .dropdown-menu ul {
-    align-items: center;
+    width: 70%;
+    max-width: 200px;
   }
 
   .box-wrapper {
